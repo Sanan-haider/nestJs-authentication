@@ -6,13 +6,18 @@ import { Document } from 'mongoose';
 })
 export class User extends Document {
   @Prop()
-  name: string;
+  firstname: string;
+  @Prop()
+  lastname: string;
 
   @Prop({ unique: [true, 'Duplicate email entered'] })
   email: string;
 
   @Prop()
   password: string;
+
+  @Prop()
+  role: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
